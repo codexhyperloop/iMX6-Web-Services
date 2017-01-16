@@ -1,0 +1,22 @@
+// decoding table
+
+<script>
+
+var msg[5];
+msg[0]=" sensors have failed";
+msg[1]=" battery temperatures have exceeded  ";
+msg[2]=" Voltage levels have exceeded";
+msg[3]=" Current values have exceeded";
+msg[4]=" accelerometer is malfunctioning";
+
+var mode[5];   
+mode[0]= " standby";
+mode[1]= "acc ";
+mode[2]= "cruise ";
+mode[3]= "  brake";
+
+var alert[5];                
+alert[0]=" brake jammed";
+alert[1]="low voltage";
+
+</script>
