@@ -7,24 +7,22 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+
 
 
 <style>
-body {
-    margin: 0;
-    padding: 0;
-}
 
+<!-- to move it to the right -->
 .container {
     position: relative;
-    width: 100%;
 }
 
-.right {
+.bottomright {
     position: absolute;
-    right: 0px;
-    width: 300px;
+    bottom: -15px;
+    right: 16px;
+    font-size: 15px;
+}
     
 }
 
@@ -32,35 +30,39 @@ body {
    background-color: white;
 }
 
-h3 {
-    color: blue;
+
+
+<!-- Navigation bar -->
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    background-color: #f1f1f1;
 }
 
-h1 {
-	color: red;
-
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 6px;
+    text-decoration: none;
 }
 
-<h3>Current time</h3>
-<p id="demo"></p>
+
+.bottomleft {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size: 18px;
+}
+
 </style>
 </head>
 
-<script>
-
-
-var myVar = setInterval(currenttime, 1000);// set
-
-function currenttime() {
-var d = new Date();
-
-    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
-    }
- </script>
 
 <div class="container">
-  <div class="right">
-<h1>Speed</h1>
+  <div class="bottomright">
+<p>Speed</p>
  
  
  
@@ -77,11 +79,7 @@ var x = document.getElementById("deo")
 }
 </script>
 
-
-
-
-
-<h3>temperature </h3>
+<p>temperature</p> 
 <p id="d"></p>
 
 <script>
@@ -95,7 +93,7 @@ var x = document.getElementById("d")
 }
 </script>
 
-<h1>Acceleratiion</h1>
+<p>Acceleratiion</p> 
 <p id="ACC"></p>
 <script>
 var my = setInterval(Acceleration, 1000);
@@ -108,8 +106,8 @@ var x = document.getElementById("ACC")
 
 </script>
 
-<h1>position</h1>
 
+<p>Position</p>
 <p id="POS"></p>
 <script>
 
@@ -122,7 +120,9 @@ var x = document.getElementById("POS")
 }
 </script>
 
-<h3>voltage</h3>
+
+<p>Voltage</p> 
+ 
 <p id="Volt"></p>
 <script>
 var my = setInterval(Voltage, 1000);
@@ -135,7 +135,9 @@ var x = document.getElementById("Volt")
 
 </script>
 
-<h3>Current</h3>
+<p>Current</p> 
+ 
+
 <p id="curr"></p>
 <script>
 var my = setInterval(Current, 1000);
@@ -171,6 +173,41 @@ alert[0]=" brake jammed";
 alert[1]="low voltage";
 
 </script>
+ <div class="bottomleft">
+ 
+<p> Odometer: </p> 
+<p id="dt"></p>
 
+<script>
+var my = setInterval(distanceTravelled, 1000);
+function distanceTravelled ()
+{
+var x = document.getElementById("dt")
+    x.innerHTML = Math.floor((Math.random() * 100) + 1) + " km";
+
+
+}
+</script>
+
+
+<p> Operational mode: </p>
+
+<!-- display transport, standby, ready, accelerate with wheels, without wheels, cruise, brake, braking with wheels, disk brake, positioning, halt, emergency brake, off -->
+
+Upon receiving info change and display these. 
+<!--   -->
+
+<p> System errors: </p>
+
+<ul>
+  <li>sensors</a></li>
+  <li><a href="#news">CPU</a></li>
+  <li><a href="#contact">Communications</a></li>
+ 
+</ul>
+
+
+<p> System alerts: </p>
+</div>
 </body>
 </html>
