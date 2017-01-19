@@ -1,0 +1,42 @@
+<html>
+
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+			$.ajax({
+			  	  
+			  url: 'sam1data.json',
+			  dataType: "text",
+			  success: function (data) {
+				
+				var sName = '';
+				var obj = $.parseJSON(data);
+    
+				$.each(obj, function(index, element) {
+					$('body').append($('<div>', {
+					text: index + ' ' + element.accelZ
+					}));
+			
+					});
+				
+				}
+			  
+			  
+			  });
+		
+});
+</script>
+
+</head>
+
+<body>
+
+<span></span>
+
+</body>
+
+
+</html>
